@@ -4,6 +4,10 @@ body {
     margin: 20px auto; /* centers horizontally */
     text-align: center;
     font-family: monospace;
-    background-color: #AAAAAA;
+    background-color: #999999;
 }
-
+p {
+    font-size: 18px;
+    color: #037a8a;
+    font-family: sans-serif;
+}
