@@ -42,7 +42,7 @@ class AudioB extends TextElement {
     }
 }
 
-const hannibal1 = new AudioB("buttonHannibal1", "audio/Hannibal1.mp3");
+const hannibal1 = new AudioB("hannibal1", "audio/Hannibal1.mp3");
 function play() {
     hannibal1.audio.play();
 }
