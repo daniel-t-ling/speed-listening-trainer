@@ -33,3 +33,22 @@ function setSpeed() {
 }
 
 audioSlider.element.addEventListener("input", setSpeed);
+
+class AudioB extends TextElement {
+    constructor(elementId, audioSrc) {
+        super(elementId);
+        this._audio = new Audio()
+        this._audio.src = audioSrc;
+    }
+
+    get audio() {
+        return this.audio;
+    }
+
+    play() {
+        this.audio.play();
+    }
+}
+
+const audioHannibal1 = new AudioB("buttonHannibal1", "audio/Hannibal1.mp3");
+audioHannibal1.element.addEventListener("click", audioHannibal1.play);
