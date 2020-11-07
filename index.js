@@ -46,13 +46,12 @@ const hannibal1 = new AudioB("buttonHannibal1", "audio/Hannibal1.mp3");
 function play() {
     hannibal1.audio.play();
 }
-
-const audioSlider = new InputE("speedSlider", "speedSliderLabel");
+const hannibal1Playback = new InputE("hannibal1Playback", "hannibal1PlaybackLabel");
 function setSpeed() {
-    hannibal1.audio.playbackRate = audioSlider.element.value;
-    audioSlider.label.innerHTML = `Playback Speed: ${hannibal1.audio.playbackRate}`;
+    hannibal1.audio.playbackRate = hannibal1Playback.element.value;
+    hannibal1Playback.label.innerHTML = `Playback Speed: ${hannibal1.audio.playbackRate}`;
 }
 
-audioSlider.element.addEventListener("input", setSpeed);
+hannibal1Playback.element.addEventListener("input", setSpeed);
 
 hannibal1.element.addEventListener("click", play);
