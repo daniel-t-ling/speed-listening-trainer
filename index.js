@@ -24,13 +24,16 @@ class Input extends HElement{
     constructor(buttonId, variable) {
         super();
         this._variable = variable;
+        this.element.addEventListener("onchange", this.change());
         inputs.push(this); // adds input object to array
     }
 
-    get variable() {
-        return this._variable;
+    change() {
+        this._variable() = this.element.value;
     }
 }
+
+let speed = 50; // default value
 
 const audioSlider = new Input("speedSlider", );
 
