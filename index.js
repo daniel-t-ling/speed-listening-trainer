@@ -52,6 +52,7 @@ function play() {
         timeInterval *= 2;
     }, timeInterval);*/
 }
+
 const hannibal1Playback = new InputE("hannibal1Playback", "hannibal1PlaybackLabel");
 function setSpeed() {
     hannibal1.audio.playbackRate = hannibal1Playback.element.value;
