@@ -1,11 +1,11 @@
 // HTML Element framework
 class HElement {
-    constructor(buttonId) {
-        this._buttonId = buttonId;
+    constructor(elementId) {
+        this._elementId = elementId;
     }
 
     get element() {
-        document.getElementById(this._buttonId);
+        return document.getElementById(this._elementId);
     }
 
     hide() {
@@ -21,19 +21,23 @@ class HElement {
 // Input stuffs
 const inputs = [];
 class Input extends HElement{
-    constructor(buttonId, variable) {
-        super();
-        this._variable = variable;
-        this.element.addEventListener("onchange", this.change());
+    constructor(elementId, labelId) {
+        super(elementId);
+        this._labelId = labelId;
+        //this.element.addEventListener("onchange", this.change());
         inputs.push(this); // adds input object to array
     }
 
+    get label() {
+        return document.getElementById(this._labelId);
+    }
+
     change() {
-        this._variable() = this.element.value;
+        speed = this.element.value;
+        this.label.innerHTML = `Playback Speed: ${speed}`;
     }
 }
 
-let speed = 50; // default value
-
-const audioSlider = new Input("speedSlider", );
-
+let speed = 1; // default value
+const audioSlider = new Input("speedSlider", "speedSliderLabel");
+audioSlider.element.addEventListener("onchange", audioSlider.change());
