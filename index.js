@@ -1,3 +1,4 @@
+alert(); // test
 // Element framework
 class HElement {
     constructor(buttonId) {
