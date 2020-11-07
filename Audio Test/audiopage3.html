@@ -1,28 +1,32 @@
-<!DOCTYPE html> 
-<html> 
-<body> 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
 
-<button onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
-<button onclick="setPlaySpeed()" type="button">Set video to be play in slow motion</button><br> 
-
-<audio controls>
-  <audio src="hannibal_01_abbott_64kb.mp3">
-  Your browser does not support HTML5 video.
-  </audio>
+<button onclick="initAudio();buttononoff()" id="btn1" type="button" >Start</button>
 
 <script>
-var audio = document.getElementById("myVideo");
-
-function getPlaySpeed() { 
-  alert(audio.playbackRate);
-} 
-
-function setPlaySpeed() { 
-  Audio.playbackRate = 5;
-} 
-</script> 
-
-<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
-
-</body> 
-</html>
+function initAudio(){
+	var audio = new Audio();
+	audio.src = "hannibal_01_abbott_64kb.mp3";
+  audio.play();
+  var audiospeed = 1
+  audio.playbackRate = audiospeed  
+}
+function buttononoff(){
+	if (flag=1) 
+    document.getElementById("btn1").disabled = true;
+else 
+    document.getElementById("btn1").disabled = false;
+}
+setInterval(logincrease(), 100)
+function logincrease() {
+  audiospeed = Math.log(audiospeed)
+}
+window.addEventListener("load", initAudio);
+</script>
+</head>
+<body>
+    <div class="slidecontainer" id="speedlist">
+        <input type="range" min="1" max="4" value="1" class="slider" id="myRange" step="0.05">
+      </div>

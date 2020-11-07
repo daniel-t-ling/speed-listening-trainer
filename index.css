@@ -4,7 +4,15 @@ body {
     margin: 20px auto; /* centers horizontally */
     text-align: center;
     font-family: monospace;
+<<<<<<< HEAD
     display: block;
     background-color: #444444;
+=======
+    background-color: #999999;
 }
-
+p {
+    font-size: 18px;
+    color: #037a8a;
+    font-family: sans-serif;
+>>>>>>> 892a433d9ea77639687aa90356bd71a51f51c814
+}

@@ -2,7 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<button onclick="initAudio()" type="button">Start</button>
+
+<button onclick="initAudio();buttononoff()" id="btn1" type="button" >Start</button>
+
 <script>
 function initAudio(){
 	var audio = new Audio();
@@ -13,6 +15,13 @@ function initAudio(){
 	function changeSpeed(event){
 		audio.playbackRate = event.target.value;
 	}
+
+}
+function buttononoff(){
+	if (flag=1) 
+    document.getElementById("btn1").disabled = true;
+else 
+    document.getElementById("btn1").disabled = false;
 }
 window.addEventListener("load", initAudio);
 </script>
@@ -23,5 +32,4 @@ window.addEventListener("load", initAudio);
   <option value=".5">.5</option>
   <option value="1">Normal</option>
   <option value="1.5">1.5</option>
-  
-  
+  <option value="2.25">2.25</option>
