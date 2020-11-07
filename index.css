@@ -1,14 +1,28 @@
 body {
     margin: auto;
     box-sizing: border-box;
-    margin: 20px auto; /* centers horizontally */
     text-align: center;
     font-family: monospace;
-    display: block;
     background-color: #999999;
+    width: 60%;
 }
+
+label {
+    margin: inherit;
+    display: block;
+}
+
+button {
+    margin: 20px auto;
+}
+
 p {
     font-size: 18px;
     color: #037a8a;
     font-family: sans-serif;
+}
+
+.hannibal {
+    border: 2px solid black;
+    background-color: #444444;
 }
