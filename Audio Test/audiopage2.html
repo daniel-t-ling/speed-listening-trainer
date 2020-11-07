@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+
+<button onclick="initAudio();buttononoff()" id="btn1" type="button" >Start</button>
+
+<script>
+function initAudio(){
+	var audio = new Audio();
+	audio.src = "hannibal_01_abbott_64kb.mp3";
+	audio.play();
+	var speedlist = document.getElementById("speedlist");
+	speedlist.addEventListener("change",changeSpeed);
+	function changeSpeed(event){
+		audio.playbackRate = event.target.value;
+	}
+
+}
+function buttononoff(){
+	if (flag=1) 
+    document.getElementById("btn1").disabled = true;
+else 
+    document.getElementById("btn1").disabled = false;
+}
+window.addEventListener("load", initAudio);
+</script>
+</head>
 <body>
-
-<h1>The audio src attribute</h1>
-
-<p>Click on the play button to play a sound:</p>
-
-<audio src="hannibal_01_abbott_64kb.mp3" controls>
-Your browser does not support the audio element.
-</audio>
-
-<p><b>Note:</b> The .ogg fileformat is not supported in IE/Edge and Safari.</p>
-
-</body>
-</html>
-
+    <div class="slidecontainer" id="speedlist">
+        <input type="range" min="1" max="4" value="1" class="slider" id="myRange" step="0.05">
+      </div>

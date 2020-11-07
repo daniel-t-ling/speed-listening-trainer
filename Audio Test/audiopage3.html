@@ -2,10 +2,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<button onclick="initAudio()" type="button">Play</button>
+
+<button onclick="initAudio();buttononoff()" id="btn1" type="button" >Start</button>
+
 <script>
 function initAudio(){
 	var audio = new Audio();
 	audio.src = "hannibal_01_abbott_64kb.mp3";
 	audio.play();
+	var speedlist = document.getElementById("speedlist");
+	speedlist.addEventListener("change",changeSpeed);
+	function changeSpeed(event){
+		audio.playbackRate = event.target.value;
+	}
+
 }
+function buttononoff(){
+	if (flag=1) 
+    document.getElementById("btn1").disabled = true;
+else 
+    document.getElementById("btn1").disabled = false;
+}
+window.addEventListener("load", initAudio);
+</script>
+</head>
+<body>
+    <div class="slidecontainer" id="speedlist">
+        <input type="range" min="1" max="4" value="1" class="slider" id="myRange" step="0.05">
+      </div>
