@@ -9,19 +9,19 @@
 function initAudio(){
 	var audio = new Audio();
 	audio.src = "hannibal_01_abbott_64kb.mp3";
-	audio.play();
-	var speedlist = document.getElementById("speedlist");
-	speedlist.addEventListener("change",changeSpeed);
-	function changeSpeed(event){
-		audio.playbackRate = event.target.value;
-	}
-
+  audio.play();
+  var audiospeed = 1
+  audio.playbackRate = audiospeed  
 }
 function buttononoff(){
 	if (flag=1) 
     document.getElementById("btn1").disabled = true;
 else 
     document.getElementById("btn1").disabled = false;
+}
+setInterval(logincrease(), 100)
+function logincrease() {
+  audiospeed = Math.log(audiospeed)
 }
 window.addEventListener("load", initAudio);
 </script>
