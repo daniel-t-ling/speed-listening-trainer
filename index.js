@@ -1,4 +1,3 @@
-alert(); //test
 // HTML Element framework
 class TextElement {
     constructor(elementId) {
@@ -8,21 +7,11 @@ class TextElement {
     get element() {
         return document.getElementById(this._elementId);
     }
-
-    hide() {
-        this.element.style.display = none;
-    }
-
-    show() {
-        this.element.style.display = inline;
-    }
 }
-
-let speed = 1; // default value
 
 // Input stuffs
 const inputs = [];
-class InputE extends TextElement{
+class InputE extends TextElement {
     constructor(elementId, labelId) {
         super(elementId);
         this._labelId = labelId;
@@ -33,16 +22,37 @@ class InputE extends TextElement{
     get label() {
         return document.getElementById(this._labelId);
     }
+}
 
-    change() {
-        speed = this.element.value;
-        this.label.innerHTML = `Playback Speed: ${speed}`;
+// Audio Button
+class AudioB extends TextElement {
+    constructor(elementId, audioSrc) {
+        super(elementId);
+        this._audio = new Audio();
+        this._audio.src = audioSrc;
+        this._audio.playbackRate;
+    }
+
+    get audio() {
+        return this._audio;
+    }
+
+    get playbackRate() {
+        return this._audio.playbackRate;
     }
 }
 
-function change() {
-
+const hannibal1 = new AudioB("buttonHannibal1", "audio/Hannibal1.mp3");
+function play() {
+    hannibal1.audio.play();
 }
 
 const audioSlider = new InputE("speedSlider", "speedSliderLabel");
-audioSlider.element.addEventListener("onchange", audioSlider.change());
+function setSpeed() {
+    hannibal1.audio.playbackRate = audioSlider.element.value;
+    audioSlider.label.innerHTML = `Playback Speed: ${hannibal1.audio.playbackRate}`;
+}
+
+audioSlider.element.addEventListener("input", setSpeed);
+
+hannibal1.element.addEventListener("click", play);
