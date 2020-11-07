@@ -1,11 +1,12 @@
+alert(); //test
 // HTML Element framework
-class HElement {
-    constructor(buttonId) {
-        this._buttonId = buttonId;
+class TextElement {
+    constructor(elementId) {
+        this._elementId = elementId;
     }
 
     get element() {
-        document.getElementById(this._buttonId);
+        return document.getElementById(this._elementId);
     }
 
     hide() {
@@ -17,23 +18,31 @@ class HElement {
     }
 }
 
+let speed = 1; // default value
 
 // Input stuffs
 const inputs = [];
-class Input extends HElement{
-    constructor(buttonId, variable) {
-        super();
-        this._variable = variable;
-        this.element.addEventListener("onchange", this.change());
+class InputE extends TextElement{
+    constructor(elementId, labelId) {
+        super(elementId);
+        this._labelId = labelId;
+        //this.element.addEventListener("onchange", this.change());
         inputs.push(this); // adds input object to array
     }
 
+    get label() {
+        return document.getElementById(this._labelId);
+    }
+
     change() {
-        this._variable() = this.element.value;
+        speed = this.element.value;
+        this.label.innerHTML = `Playback Speed: ${speed}`;
     }
 }
 
-let speed = 50; // default value
+function change() {
 
-const audioSlider = new Input("speedSlider", );
+}
 
+const audioSlider = new InputE("speedSlider", "speedSliderLabel");
+audioSlider.element.addEventListener("onchange", audioSlider.change());
