@@ -9,8 +9,6 @@ class TextElement {
     }
 }
 
-let speed = 1; // default value
-
 // Input stuffs
 const inputs = [];
 class InputE extends TextElement {
@@ -26,29 +24,35 @@ class InputE extends TextElement {
     }
 }
 
+// Audio Button
+class AudioB extends TextElement {
+    constructor(elementId, audioSrc) {
+        super(elementId);
+        this._audio = new Audio();
+        this._audio.src = audioSrc;
+        this._audio.playbackRate;
+    }
+
+    get audio() {
+        return this._audio;
+    }
+
+    get playbackRate() {
+        return this._audio.playbackRate;
+    }
+}
+
+const hannibal1 = new AudioB("buttonHannibal1", "audio/Hannibal1.mp3");
+function play() {
+    hannibal1.audio.play();
+}
+
 const audioSlider = new InputE("speedSlider", "speedSliderLabel");
 function setSpeed() {
-    speed = audioSlider.element.value;
-    audioSlider.label.innerHTML = `Playback Speed: ${speed}`;
+    hannibal1.audio.playbackRate = audioSlider.element.value;
+    audioSlider.label.innerHTML = `Playback Speed: ${hannibal1.audio.playbackRate}`;
 }
 
 audioSlider.element.addEventListener("input", setSpeed);
 
-class AudioB extends TextElement {
-    constructor(elementId, audioSrc) {
-        super(elementId);
-        this._audio = new Audio()
-        this._audio.src = audioSrc;
-    }
-
-    get audio() {
-        return this.audio;
-    }
-
-    play() {
-        this.audio.play();
-    }
-}
-
-const audioHannibal1 = new AudioB("buttonHannibal1", "audio/Hannibal1.mp3");
-audioHannibal1.element.addEventListener("click", audioHannibal1.play);
+hannibal1.element.addEventListener("click", play);
