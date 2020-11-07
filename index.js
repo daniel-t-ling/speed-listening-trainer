@@ -45,6 +45,12 @@ class AudioB extends TextElement {
 const hannibal1 = new AudioB("hannibal1", "audio/Hannibal1.mp3");
 function play() {
     hannibal1.audio.play();
+    /*let timeInterval = 1000;
+    setInterval(() => {
+        hannibal1.audio.playbackRate += 0.1;
+        hannibal1Playback.element.value += 0.1;
+        timeInterval *= 2;
+    }, timeInterval);*/
 }
 const hannibal1Playback = new InputE("hannibal1Playback", "hannibal1PlaybackLabel");
 function setSpeed() {
@@ -53,5 +59,4 @@ function setSpeed() {
 }
 
 hannibal1Playback.element.addEventListener("input", setSpeed);
-
 hannibal1.element.addEventListener("click", play);
