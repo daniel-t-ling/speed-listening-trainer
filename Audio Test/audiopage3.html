@@ -11,7 +11,9 @@ function initAudio(){
 	audio.src = "hannibal_01_abbott_64kb.mp3";
   audio.play();
   var audiospeed = 1
-  audio.playbackRate = audiospeed  
+  audio.playbackRate = audiospeed
+  setInterval(function(){audiospeed += 1}, 100)
+
 }
 function buttononoff(){
 	if (flag=1) 
@@ -19,9 +21,6 @@ function buttononoff(){
 else 
     document.getElementById("btn1").disabled = false;
 }
-setInterval(function (
-  audiospeed = Math.log(audiospeed)), 100)
-
 window.addEventListener("load", initAudio);
 </script>
 </head>
