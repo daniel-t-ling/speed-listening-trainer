@@ -3,6 +3,7 @@ body {
     box-sizing: border-box;
     text-align: center;
     font-family: sans-serif;
+    color: #01566b;
     background-color: #A9A9A9;
     width: 60%;
 }
@@ -18,11 +19,24 @@ button {
 
 p {
     font-size: 18px;
-    color: #037a8a;
+    color: #01566b;
     font-family: sans-serif;
 }
-
+speedSliderLabel{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.6;
+  transition: opacity .3s;
+}
+speedSliderLabel:hover{
+    opacity: 1;
+}
 .hannibal {
-    border: 2px solid black;
+    border: 2px solid;
+    border-color: black;
     background-color: #444444;
 }
