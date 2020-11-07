@@ -1,6 +1,6 @@
 alert(); //test
 // HTML Element framework
-class HElement {
+class TextElement {
     constructor(elementId) {
         this._elementId = elementId;
     }
@@ -22,7 +22,7 @@ let speed = 1; // default value
 
 // Input stuffs
 const inputs = [];
-class Input extends HElement{
+class InputE extends TextElement{
     constructor(elementId, labelId) {
         super(elementId);
         this._labelId = labelId;
@@ -40,5 +40,9 @@ class Input extends HElement{
     }
 }
 
-const audioSlider = new Input("speedSlider", "speedSliderLabel");
+function change() {
+
+}
+
+const audioSlider = new InputE("speedSlider", "speedSliderLabel");
 audioSlider.element.addEventListener("onchange", audioSlider.change());
