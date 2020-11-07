@@ -9,9 +9,9 @@ class TextElement {
     }
 }
 
-// Input stuffs
+// Input Slider
 const inputs = [];
-class InputE extends TextElement {
+class InputElement extends TextElement {
     constructor(elementId, labelId) {
         super(elementId);
         this._labelId = labelId;
@@ -25,7 +25,7 @@ class InputE extends TextElement {
 }
 
 // Audio Button
-class AudioB extends TextElement {
+class AudioButton extends TextElement {
     constructor(elementId, audioSrc) {
         super(elementId);
         this._audio = new Audio();
@@ -42,7 +42,7 @@ class AudioB extends TextElement {
     }
 }
 
-const hannibal1 = new AudioB("hannibal1", "audio/Hannibal1.mp3");
+const hannibal1 = new AudioButton("hannibal1", "audio/Hannibal1.mp3");
 function play() {
     hannibal1.audio.play();
     /*let timeInterval = 1000;
@@ -53,7 +53,7 @@ function play() {
     }, timeInterval);*/
 }
 
-const hannibal1Playback = new InputE("hannibal1Playback", "hannibal1PlaybackLabel");
+const hannibal1Playback = new InputElement("hannibal1Playback", "hannibal1PlaybackLabel");
 function setSpeed() {
     hannibal1.audio.playbackRate = hannibal1Playback.element.value;
     hannibal1Playback.label.innerHTML = `Playback Speed: ${hannibal1.audio.playbackRate}`;
