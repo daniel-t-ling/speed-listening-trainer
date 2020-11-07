@@ -1,3 +1,4 @@
+alert(); //test
 // HTML Element framework
 class HElement {
     constructor(elementId) {
@@ -17,6 +18,7 @@ class HElement {
     }
 }
 
+let speed = 1; // default value
 
 // Input stuffs
 const inputs = [];
@@ -38,6 +40,5 @@ class Input extends HElement{
     }
 }
 
-let speed = 1; // default value
 const audioSlider = new Input("speedSlider", "speedSliderLabel");
 audioSlider.element.addEventListener("onchange", audioSlider.change());
