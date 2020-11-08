@@ -39,9 +39,20 @@ p {
   appearance: none;
   width: 50%;
   height: 5px;
+  border-radius: 3px;
   background: #ffffff;
   opacity: 0.6;
   transition: opacity .3s;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;/*Im so stupid, I forgot this code overides CSS defaults*/
+    appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background: #000000;
+    cursor: pointer;
 }
 
 .slider:hover {
