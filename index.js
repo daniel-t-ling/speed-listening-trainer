@@ -9,21 +9,6 @@ class TextElement {
     }
 }
 
-// Input Slider
-const inputs = [];
-class InputElement extends TextElement {
-    constructor(elementId, labelId) {
-        super(elementId);
-        this._labelId = labelId;
-        //this.element.addEventListener("onchange", this.change());
-        inputs.push(this); // adds input object to array
-    }
-
-    get label() {
-        return document.getElementById(this._labelId);
-    }
-}
-
 // Audio Button
 class AudioButton extends TextElement {
     constructor(elementId, audioSrc) {
@@ -31,6 +16,7 @@ class AudioButton extends TextElement {
         this._audio = new Audio();
         this._audio.src = audioSrc;
         this._audio.playbackRate;
+        this.element.addEventListener("click", () => AudioButton.play(hannibal1));
     }
 
     get audio() {
@@ -40,24 +26,40 @@ class AudioButton extends TextElement {
     get playbackRate() {
         return this._audio.playbackRate;
     }
-}
 
-const hannibal1 = new AudioButton("hannibal1", "audio/Hannibal1.mp3");
-function play() {
-    hannibal1.audio.play();
-    /*let timeInterval = 1000;
-    setInterval(() => {
+    static play(hannibal) {
+        hannibal.audio.play();
+        /*let timeInterval = 1000;
+        setInterval(() => {
         hannibal1.audio.playbackRate += 0.1;
         hannibal1Playback.element.value += 0.1;
         timeInterval *= 2;
-    }, timeInterval);*/
+        }, timeInterval);*/
+    }
 }
 
-const hannibal1Playback = new InputElement("hannibal1Playback", "hannibal1PlaybackLabel");
-function setSpeed() {
-    hannibal1.audio.playbackRate = hannibal1Playback.element.value;
-    hannibal1Playback.label.innerHTML = `Playback Speed: ${hannibal1.audio.playbackRate}`;
+// Input Slider
+class InputElement extends TextElement {
+    constructor(elementId, labelId, audioButton) {
+        super(elementId);
+        this._labelId = labelId;
+        this._audioButton = audioButton;
+        this.element.addEventListener("input", () => InputElement.setSpeed(this.audioButton, hannibal1Playback));
+    }
+
+    get label() {
+        return document.getElementById(this._labelId);
+    }
+
+    get audioButton() {
+        return this._audioButton;
+    }
+
+    static setSpeed(hannibal, hannibalAudioPlayback) {
+        hannibal.audio.playbackRate = hannibalAudioPlayback.element.value;
+        hannibalAudioPlayback.label.innerHTML = `Playback Speed: ${hannibal.audio.playbackRate}`;
+    }
 }
 
-hannibal1Playback.element.addEventListener("input", setSpeed);
-hannibal1.element.addEventListener("click", play);
+const hannibal1 = new AudioButton("hannibal1", "audio/Hannibal1.mp3");
+const hannibal1Playback = new InputElement("hannibal1Playback", "hannibal1PlaybackLabel", hannibal1);
