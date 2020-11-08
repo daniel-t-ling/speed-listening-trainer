@@ -2,8 +2,8 @@
 Train your ears with our speed-listening trainer! Hear a chapter of a book and adjust the speed to train yourself to comprehend information faster or automatically increase the speed logarithmically. 
 
 # Available Audiobooks
-13 Chapters of Sherlock Holmes by Sir Arthur Conan Doyle, Narrated by LibriVox collaborators (~30 mins per chapter) 
-13 Chapters of Hannibal by Jacob Abbott, Narrated by LibriVox collaborators (~30 mins per chapter) 
+13 Chapters of Sherlock Holmes by Sir Arthur Conan Doyle, Narrated by LibriVox collaborators (~30 mins per chapter).
+13 Chapters of Hannibal by Jacob Abbott, Narrated by LibriVox collaborators (~30 mins per chapter).
 
 # Contributions
 Feel free to submit issues or suggestions through github.
