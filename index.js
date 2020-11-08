@@ -1,5 +1,5 @@
 // JavaScript
-let play = false;
+let play = false; // prevents autoincrease from increasing before playing audio
 
 // HTML Element framework
 class TextElement {
