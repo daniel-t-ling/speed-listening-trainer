@@ -108,3 +108,22 @@ const hannibalSwitch = new SwitchButton("hannibalSwitch", hannibalPlayback);
 const playHolmes = new AudioButton("playHolmes", "holmesList");
 const holmesPlayback = new InputElement("holmesPlayback", "holmesPlaybackLabel", playHolmes);
 const holmesSwitch = new SwitchButton("holmesSwitch", holmesPlayback);
+
+/*autoIncrease() {
+    this.element.innerHTML = "Manually Increase Speed";
+    this.playback.element.style.display = "none";
+    let timeInterval = 3;
+    var i=1;
+    var refreshId = setInterval(() => {
+        if(play) {
+            if (!(i%timeInterval)) {
+                this.playback.audioButton.audio.playbackRate = (this.playback.audioButton.audio.playbackRate + 0.1).toFixed(1); // prevent repeating decimals
+                this.playback.label.innerHTML = `Playback Speed: ${this.playback.audioButton.audio.playbackRate}`;
+            }
+        }
+        i++;
+    }, 1000);
+
+    this.element.addEventListener("click", () => clearInterval(refreshId));
+    this.element.addEventListener("click", () => clearInterval(intervalchange));
+}*/
