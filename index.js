@@ -7,7 +7,7 @@ class TextElement {
         this._elementId = elementId;
     }
 
-    get element() {
+    get element() { // short hand method of grabing JS object's HTML element
         return document.getElementById(this._elementId);
     }
 }
@@ -32,7 +32,7 @@ class AudioButton extends TextElement {
     static play(button) {
         button.audio.src = button.selectedAudio;
         button.audio.play();
-        play = true
+        play = true;
     }
 }
 
@@ -54,8 +54,8 @@ class InputElement extends TextElement {
     }
 
     static setSpeed(audioPlayback, audioButton) {
-        audioButton.audio.playbackRate = audioPlayback.element.value;
-        audioPlayback.label.innerHTML = `Playback Speed: ${audioButton.audio.playbackRate}`;
+        audioButton.audio.playbackRate = audioPlayback.element.value; // sets speed to slider value
+        audioPlayback.label.innerHTML = `Playback Speed: ${audioButton.audio.playbackRate}`; // shows speed on label
     }
 }
 
@@ -73,17 +73,15 @@ class SwitchButton extends TextElement {
 
     autoIncrease() {
         this.element.innerHTML = "Manually Increase Speed";
-        this.playback.element.style.display = "none";
-        let timeInterval = 1000;
+        this.playback.element.style.display = "none"; // hide slider
         const automatic = setInterval(() => {
             if (play) {
-                timeInterval *= 2;
                 this.playback.audioButton.audio.playbackRate = (this.playback.audioButton.audio.playbackRate + 0.1).toFixed(1); // prevent repeating decimals
-                this.playback.label.innerHTML = `Playback Speed: ${this.playback.audioButton.audio.playbackRate}`;
+                this.playback.label.innerHTML = `Playback Speed: ${this.playback.audioButton.audio.playbackRate}`; // shows speed on label
             }
-        }, timeInterval);
+        }, 60000);
 
-        this.element.addEventListener("click", () => clearInterval(automatic));
+        this.element.addEventListener("click", () => clearInterval(automatic)); // stops increasing on another click
     }
 
     manualIncrease() {
@@ -91,7 +89,7 @@ class SwitchButton extends TextElement {
         this.playback.element.style.display = "block";
     }
 
-    changeMethod() {
+    changeMethod() { // switches between autoIncrease and manualIncrease
         if (this.playback.element.style.display === "block") {
             this.autoIncrease();
         } else {

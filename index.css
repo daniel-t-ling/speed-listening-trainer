@@ -45,7 +45,7 @@ p {
   transition: opacity .3s;
 }
 
-.slider::-webkit-slider-thumb{
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;/*Im so stupid, I forgot this code overides CSS defaults*/
     appearance: none;
     height: 12px;
