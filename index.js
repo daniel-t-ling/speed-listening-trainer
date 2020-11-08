@@ -11,24 +11,24 @@ class TextElement {
 
 // Audio Button
 class AudioButton extends TextElement {
-    constructor(elementId, audioSrc) {
+    constructor(elementId, audioListId) {
         super(elementId);
         this._audio = new Audio();
-        this._audio.src = audioSrc;
-        this._audio.playbackRate;
-        this.element.addEventListener("click", () => AudioButton.play(hannibal1));
+        this._audioListId = audioListId;
+        this.element.addEventListener("click", () => AudioButton.play(this));
     }
 
     get audio() {
         return this._audio;
     }
 
-    get playbackRate() {
-        return this._audio.playbackRate;
+    get selectedAudio() {
+        return `Audio/Hannibal${document.getElementById(this._audioListId).value}.mp3`;
     }
 
-    static play(hannibal) {
-        hannibal.audio.play();
+    static play(button) {
+        button.audio.src = button.selectedAudio;
+        button.audio.play();
         /*let timeInterval = 1000;
         setInterval(() => {
         hannibal1.audio.playbackRate += 0.1;
@@ -44,7 +44,7 @@ class InputElement extends TextElement {
         super(elementId);
         this._labelId = labelId;
         this._audioButton = audioButton;
-        this.element.addEventListener("input", () => InputElement.setSpeed(this.audioButton, hannibal1Playback));
+        this.element.addEventListener("input", () => InputElement.setSpeed(this, this.audioButton));
     }
 
     get label() {
@@ -55,11 +55,11 @@ class InputElement extends TextElement {
         return this._audioButton;
     }
 
-    static setSpeed(hannibal, hannibalAudioPlayback) {
-        hannibal.audio.playbackRate = hannibalAudioPlayback.element.value;
-        hannibalAudioPlayback.label.innerHTML = `Playback Speed: ${hannibal.audio.playbackRate}`;
+    static setSpeed(audioPlayback, audioButton) {
+        audioButton.audio.playbackRate = audioPlayback.element.value;
+        audioPlayback.label.innerHTML = `Playback Speed: ${audioButton.audio.playbackRate}`;
     }
 }
 
-const hannibal1 = new AudioButton("hannibal1", "audio/Hannibal1.mp3");
-const hannibal1Playback = new InputElement("hannibal1Playback", "hannibal1PlaybackLabel", hannibal1);
+const playHannibal = new AudioButton("playHannibal", "hannibalList");
+const hannibalPlayback = new InputElement("hannibalPlayback", "hannibalPlaybackLabel", playHannibal);
