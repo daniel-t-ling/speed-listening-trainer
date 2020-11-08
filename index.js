@@ -89,7 +89,7 @@ class SwitchButton extends TextElement {
         const refreshId = setInterval(() => {
             if(play) {
                 if (!(i % timeInterval)) {
-                    timeInterval *= 1.54;
+                    timeInterval *= 2;
                     this.playback.audioButton.audio.playbackRate = (this.playback.audioButton.audio.playbackRate + 0.1).toFixed(1); // prevent repeating decimals
                     this.playback.label.innerHTML = `Playback Speed: ${this.playback.audioButton.audio.playbackRate}`;
                 }
