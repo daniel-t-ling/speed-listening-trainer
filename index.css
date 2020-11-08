@@ -46,7 +46,7 @@ p {
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;/*Im so stupid, I forgot this code overides CSS defaults*/
+    -webkit-appearance: none;
     appearance: none;
     height: 12px;
     width: 12px;
