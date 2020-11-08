@@ -1,11 +1,10 @@
 body {
-    margin: auto;
+    margin: 0px auto 0px;
     box-sizing: border-box;
     text-align: center;
     font-family: sans-serif;
     color: #01566b;
-    background-color: #A9A9A9;
-    width: 60%;
+    background-color: #999999;
 }
 
 label {
@@ -38,8 +37,15 @@ speedSliderLabel:hover{
     opacity: 1;
 }
 
+.description {
+    margin: inherit;
+    background-color: #777777;
+}
+
 .hannibal {
+    margin: inherit;
     border: 2px solid;
     border-color: black;
     background-color: #444444;
+    width: 60%;
 }
