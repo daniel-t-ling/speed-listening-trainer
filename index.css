@@ -3,8 +3,8 @@ body {
     box-sizing: border-box;
     text-align: center;
     font-family: sans-serif;
-    color: #004050;
-    background-color: #999999;
+    color: #ffffff;
+    background-color: #441313;
 }
 
 label {
@@ -12,45 +12,59 @@ label {
     display: block;
 }
 
-button {
+button, select {
     margin: 20px auto;
+    border: 1.5px solid rgb(255, 255, 255);
+    padding: 10px;
+    background-color: rgb(41, 41, 41);
+    color: white;
 }
-
+    
 p {
     font-size: 18px;    
     font-family: sans-serif;
 }
 
 .description {
-    margin: -20px 10px -15px;
+    margin: -20px 0px 10px;
+    padding:10px;
     background-color: #252525;
+    border-bottom: 3px solid white;
 }
+
 .slider {
   -webkit-appearance: none;
   margin: inherit;
   text-align: center;
   appearance: none;
   width: 50%;
-  height: 10%;
-  background: #d3d3d3;
+  height: 5px;
+  background: #ffffff;
   opacity: 0.6;
   transition: opacity .3s;
 }
 
-.slider:hover{
+.slider:hover {
     opacity: 1;
 }
-
 
 .speedSwitch {
     display: block;
 }
 
 .section {
-    margin: 10px auto;
+    margin: 30px auto;
     border: 2px solid;
-    border-color: black;
-    background-color: #444444;
-    color: rgb(0, 110, 110);
-    width: 60%;
+    border-color: white;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    width: 75%;
+}
+
+.hannibal {
+    background-color:#0e6b01;
+}
+
+.holmes {
+    background-color:#d4a300;
 }
