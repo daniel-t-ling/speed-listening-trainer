@@ -1,5 +1,5 @@
 body {
-    margin: 0px auto 0px;
+    margin: 2px auto;
     box-sizing: border-box;
     text-align: center;
     font-family: sans-serif;
@@ -22,24 +22,29 @@ p {
     font-family: sans-serif;
 }
 
-speedSliderLabel {
+.slider {
   -webkit-appearance: none;
+  margin: inherit;
+  text-align: center;
   appearance: none;
-  width: 100%;
-  height: 25px;
+  width: 50%;
+  height: 50%;
   background: #d3d3d3;
-  outline: none;
   opacity: 0.6;
   transition: opacity .3s;
 }
 
-speedSliderLabel:hover{
+.slider:hover{
     opacity: 1;
 }
 
 .description {
     margin: inherit;
     background-color: #777777;
+}
+
+.speedSwitch {
+    display: block;
 }
 
 .hannibal {
