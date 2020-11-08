@@ -26,7 +26,7 @@ class AudioButton extends TextElement {
     }
 
     get selectedAudio() {
-        return `Audio/Hannibal/Hannibal${document.getElementById(this._audioListId).value}.mp3`;
+        return `Audio/${document.getElementById(this._audioListId).value}.mp3`;
     }
 
     static play(button) {
@@ -100,6 +100,13 @@ class SwitchButton extends TextElement {
     }
 }
 
+// Hannibal
 const playHannibal = new AudioButton("playHannibal", "hannibalList");
 const hannibalPlayback = new InputElement("hannibalPlayback", "hannibalPlaybackLabel", playHannibal);
 const hannibalSwitch = new SwitchButton("hannibalSwitch", hannibalPlayback);
+
+
+// Holmes
+const playHolmes = new AudioButton("playHolmes", "holmesList");
+const holmesPlayback = new InputElement("holmesPlayback", "holmesPlaybackLabel", playHolmes);
+const holmesSwitch = new SwitchButton("holmesSwitch", holmesPlayback);

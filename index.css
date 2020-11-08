@@ -47,8 +47,8 @@ p {
     display: block;
 }
 
-.hannibal {
-    margin: inherit;
+.section {
+    margin: 10px auto;
     border: 2px solid;
     border-color: black;
     background-color: #444444;
