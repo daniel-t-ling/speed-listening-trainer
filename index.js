@@ -23,7 +23,7 @@ class AudioButton extends TextElement {
     }
 
     get selectedAudio() {
-        return `Audio/Hannibal${document.getElementById(this._audioListId).value}.mp3`;
+        return `Audio/Hannibal/Hannibal${document.getElementById(this._audioListId).value}.mp3`;
     }
 
     static play(button) {
