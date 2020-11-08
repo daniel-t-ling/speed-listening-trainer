@@ -3,7 +3,7 @@ body {
     box-sizing: border-box;
     text-align: center;
     font-family: sans-serif;
-    color: #01566b;
+    color: #004050;
     background-color: #999999;
 }
 
@@ -17,18 +17,21 @@ button {
 }
 
 p {
-    font-size: 18px;
-    color: #01566b;
+    font-size: 18px;    
     font-family: sans-serif;
 }
 
+.description {
+    margin: -20px 10px -15px;
+    background-color: #252525;
+}
 .slider {
   -webkit-appearance: none;
   margin: inherit;
   text-align: center;
   appearance: none;
   width: 50%;
-  height: 50%;
+  height: 10%;
   background: #d3d3d3;
   opacity: 0.6;
   transition: opacity .3s;
@@ -38,10 +41,6 @@ p {
     opacity: 1;
 }
 
-.description {
-    margin: inherit;
-    background-color: #777777;
-}
 
 .speedSwitch {
     display: block;
@@ -52,5 +51,6 @@ p {
     border: 2px solid;
     border-color: black;
     background-color: #444444;
+    color: rgb(0, 110, 110);
     width: 60%;
 }
