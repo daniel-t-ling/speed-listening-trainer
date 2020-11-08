@@ -9,5 +9,5 @@ Train your ears with our speed-listening trainer! Hear a chapter of a book and a
 Feel free to submit issues or suggestions through github.
 
 # Acknowledgment
-Thanks to LibriVox collaborators for narrating the books! All books used are under the public domain. 
-Metronome icon provided by PNGwing for non-commercial use.
+Thanks to [LibriVox](https://librivox.org/ "LibriVox Homepage") collaborators for narrating the books! All books used are under the public domain. 
+Metronome icon provided by [PNGwing](https://www.pngwing.com/ "PNGwing Homepage") for non-commercial use.
