@@ -79,7 +79,7 @@ class SwitchButton extends TextElement {
                 this.playback.audioButton.audio.playbackRate = (this.playback.audioButton.audio.playbackRate + 0.1).toFixed(1); // prevent repeating decimals
                 this.playback.label.innerHTML = `Playback Speed: ${this.playback.audioButton.audio.playbackRate}`; // shows speed on label
             }
-        }, 60000);
+        }, 120000);
 
         this.element.addEventListener("click", () => clearInterval(automatic)); // stops increasing on another click
     }
