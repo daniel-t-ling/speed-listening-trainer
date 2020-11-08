@@ -79,13 +79,13 @@ class SwitchButton extends TextElement {
         const refreshId = setInterval(() => {
             if(play) {
                 if (i === timeInterval) {
-                    timeInterval = (timeInterval * 1.54).toFixed(2);
+                    timeInterval *= 2;
                     this.playback.audioButton.audio.playbackRate = (this.playback.audioButton.audio.playbackRate + 0.1).toFixed(1); // prevent repeating decimals
                     this.playback.label.innerHTML = `Playback Speed: ${this.playback.audioButton.audio.playbackRate}`;
                 }
-                i += 0.01;
+                i++;
             } // nonlinear increase in speed
-        }, 10);
+        }, 1000);
 
         this.element.addEventListener("click", () => clearInterval(refreshId));
     }
